@@ -1,0 +1,162 @@
+.invoice-container {
+  max-width: 1200px;
+  margin: 20px auto;
+  font-family: 'Arial', sans-serif;
+}
+
+.invoice-paper {
+  padding: 30px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.invoice-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.company-info h5 {
+  margin-bottom: 5px;
+  color: #1a73e8;
+}
+
+.company-info .MuiTypography-body2,
+.invoice-info .MuiTypography-body2 {
+  margin-bottom: 2px;
+}
+
+.invoice-info {
+  text-align: right;
+}
+
+.section-divider {
+  margin: 15px 0;
+}
+
+.buyer-details {
+  margin-bottom: 20px;
+}
+
+.invoice-table-container {
+  margin-bottom: 20px;
+}
+
+.invoice-table-container .MuiTableCell-head {
+  background-color: #f3f3f3;
+  font-weight: bold;
+}
+
+.invoice-table-container .MuiTableCell-root {
+  padding: 8px;
+  font-size: 0.75rem;
+  border: 1px solid #e0e0e0;
+}
+
+.invoice-summary {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.amount-in-words {
+  flex: 2;
+}
+
+.totals {
+  flex: 1;
+}
+
+.terms-conditions {
+  margin-top: 20px;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+@media print {
+  @page {
+    size: landscape;
+    margin: 10mm;
+  }
+
+  body * {
+    visibility: hidden;
+  }
+
+  .invoice-container,
+  .invoice-container * {
+    visibility: visible;
+  }
+
+  body {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .invoice-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .invoice-paper {
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .invoice-table-container .MuiTableCell-root {
+    padding: 4px;
+    font-size: 0.65rem;
+  }
+
+  .MuiTypography-h5 {
+    font-size: 1.2rem;
+  }
+
+  .MuiTypography-h6 {
+    font-size: 1rem;
+  }
+
+  .MuiTypography-body2 {
+    font-size: 0.7rem;
+  }
+
+  .MuiTypography-subtitle1,
+  .MuiTypography-subtitle2 {
+    font-size: 0.8rem;
+  }
+
+  .section-divider {
+    margin: 10px 0;
+  }
+
+  .no-print,
+  .MuiAppBar-root,
+  .MuiToolbar-root {
+    display: none !important;
+  }
+
+  .invoice-summary {
+    margin-top: 10px;
+  }
+
+  .terms-conditions {
+    margin-top: 10px;
+  }
+
+  .invoice-table-container {
+    overflow: visible !important;
+  }
+
+  .invoice-content {
+    page-break-after: always;
+  }
+}
